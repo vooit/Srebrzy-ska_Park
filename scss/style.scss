@@ -1,0 +1,258 @@
+@import "./variables";
+@import "./form";
+.narrow-container {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+body,
+html {
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	box-sizing: border-box;
+	padding-top: 15px;
+}
+body {
+	background: $theme-bg;
+}
+.list-group-item,
+.navbar-default,
+.panel {
+	border-radius: 0 !important;
+}
+[class*="col-"] {
+	padding: 0 !important;
+}
+.spacer {
+	padding: 3em 0;
+}
+.navbar {
+	padding-left: 5%;
+	color: black;
+	background: white;
+	.navbar-brand {
+		width: 6em;
+		height: 5em;
+		position: absolute;
+		background: black;
+		justify-content: center;
+		display: flex;
+		align-items: center;
+	}
+	#navbarNavDropdown {
+		justify-content: flex-end;
+		.nav-item {
+			transition: 0.4s;
+			&:hover {
+				background-color: gray;
+			}
+		}
+		.nav-link {
+			color: black!important;
+			font-size: 1em;
+			font-weight: 200;
+		}
+	}
+}
+.search-panel {
+	display: flex;
+	flex-direction: row;
+	.panel {
+		transition: 0.4s linear;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		border: 4px solid;
+		a {
+			justify-content: center;
+		}
+		&:hover {
+			background: $theme-grey;
+		}
+	}
+}
+.floor-pointer:hover .flat {
+	opacity: 0.6;
+}
+.estate-jumbotron {
+	.floor-box {
+		width: 90%;
+		transition: 0.4s;
+		opacity: 1;
+		position: absolute;
+		top: 22%;
+		.flat {
+			width: 100%;
+		}
+	}
+	.jumbo > img {
+		width: 100%;
+	}
+	.jumbo {
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		width: 100%;
+		i {
+			position: absolute;
+			top: 20px;
+			left: 90px;
+			font-size: 2em;
+			cursor: pointer;
+		}
+	}
+	.jumbo-1 {
+		input[type="button"] {
+			background: black;
+			width: 2em;
+			height: 2em;
+			position: absolute;
+			top: 25%;
+			opacity: 0.8;
+			border: 4px solid white;
+			transform: rotate(45deg);
+			transition: 0.3s;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	.jumbo-2 {
+		.floor-box {
+			width: 75%;
+			height: 11%;
+			transition: 0.4s;
+			position: absolute;
+			top: 22%;
+			opacity: 0;
+			cursor: pointer;
+			&:hover {
+				opacity: 1;
+			}
+			.floor {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.jumbo-3 {
+		.floor-box {
+			width: 75%;
+			height: 11%;
+			transition: 0.4s;
+			position: absolute;
+			top: 22%;
+		}
+	}
+	.jumbo-info {
+		position: relative;
+		.flat-info {
+			font-size: 0.9em;
+			max-width: 25%;
+			padding: 20px;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			background: $theme-bg;
+			position: absolute;
+			top: 50%;
+			left: 25%;
+			transform: translateX(-75%) translateY(-50%);
+			img {
+				margin: 0 auto;
+			}
+			input[type="button"] {
+				color: white;
+				margin: 0 auto;
+				width: 50%;
+				background: grey;
+				border: none;
+			}
+			table {
+				width: 100%;
+				tr > td:last-of-type {
+					text-align: right;
+				}
+				tr > td:first-of-type {
+					padding-right: 10px;
+				}
+				tbody {
+					vertical-align: baseline;
+				}
+			}
+		}
+	}
+}
+.contact {
+	.contact-text {
+		h3 {
+			padding: 2em 0 1em;
+		}
+		h4 {
+			font-size: 1.1em;
+		}
+		p {
+			font-weight: 600;
+			font-size: 0.8em;
+		}
+	}
+	.contact-form {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+footer {
+	background: $footer-bg;
+	h3 {
+		font-weight: 600;
+		font-size: 2em;
+		letter-spacing: 2px;
+	}
+	p {
+		font-size: 0.8em;
+	}
+	.footer-box {
+		display: flex;
+		flex-direction: row;
+		color: white;
+		.footer-left {
+			display: flex;
+			flex-direction: column;
+			form {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				input[type=submit],
+				input[type=text] {
+					border: none;
+					background: #252525;
+					width: 40%;
+					transition: 0.4s;
+					color: #757575;
+				}
+				input[type=submit] {
+					line-height: 2.2em;
+					vertical-align: middle;
+					color: lighten(#757575, 40%);
+					background: $btn-bg;
+					&:hover {
+						background: darken($btn-bg, 10%);
+						color: white;
+						opacity: 0.7;
+					}
+				}
+			}
+		}
+		.footer-right {
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-end;
+			.footer-brand {
+				position: absolute;
+				left: 70%;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+#form_div {
+	width: 80%;
+	height: 400px;
+	padding: 5em 0;
+	background: white;
+	z-index: 100;
+	transform: translateY(22%);
+}
+#form {
+	width: 90%;
+	margin: 0 auto;
+}
+.field {
+	width: 90%;
+	padding: 4px;
+	border: none;
+	outline: none;
+	background: none;
+	color: rgb(213,213,213);
+	font-style: italic;
+	border-bottom: 2px solid $btn-bg;
+	margin-bottom: 18px;
+}
+#message {
+	resize: none;
+	height: 100px;
+	overflow-y: hidden;
+}
+#submit {
+	background-color: $btn-bg;
+	color: white;
+	font-size: 17px;
+	padding: 8px;
+	width: 100px;
+	border: none;
+	cursor: pointer;
+	opacity: 1;
+	transition: opacity 0.5s;
+	margin: 0 auto;
+}
+#submit:hover {
+	opacity: 0.7;
+}

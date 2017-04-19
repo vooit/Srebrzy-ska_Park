@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Srebrzyska_Park">
+        <title>Srebrzyska_Park</title>
+        <!--  -->
+        <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css ">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap4.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-toggleable-md  bg-faded">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">X</span>
+            </button>
+            <a class="navbar-brand hidden-xs" href="#"><img src="image/logo.png"></a>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Informacje o osiedlu
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Znajdź mieszkanie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Aktualności</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pomoc</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <section class="spacer-top">
+            <div class="container">
+                <div class="search-panel row">
+                    <div class="panel col-sm-4 ">
+                        <a href="#" class="list-group-item list-group-item-action">Wyszukiwarka Graficzna</a>
+                    </div>
+                    <div class="panel col-sm-4 ">
+                        <a href="#Wyszukiwarka Zaawansowana" class="list-group-item list-group-item-action">Wyszukiwarka Zaawansowana</a>
+                    </div>
+                    <div class="panel col-sm-4 ">
+                        <a href="#Promocje" class="list-group-item list-group-item-action">Promocje</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="estate">
+            <h3 class="narrow-container">Wybierz blok</h3>
+            <div class="estate-jumbotron">
+                <div class="jumbo jumbo-1">
+                    <img src="image/block_picture1.png">
+                    <input type="button" id="toFloorBtn" class="to-next-map">
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                </div>
+                <div class="jumbo jumbo-2">
+                    <img src="image/block_picture2.png">
+                    <div class="floor-box to-next-map">
+                        <img src="image/floor_level_cr.png" class="floor" id="toMapBtn">
+                    </div>
+                </div>
+                <div class="jumbo jumbo-3">
+                    <img src="image/floor_map.png">
+                    <div class="floor-box">
+                        <div class="flat1"><img src="flat1.png"></div>
+                    </div>
+                </div>
+                <div class="jumbo jumbo-info">
+                    <img src="image/flat_map.png">
+                    <div class="info flat-info">
+                        <table>
+                            <tr>
+                                <td>Powierzchnia</td>
+                                <td>50m2</td>
+                            </tr>
+                            <tr>
+                                <td>Kondygnacja</td>
+                                <td>50m2</td>
+                            </tr>
+                            <tr>
+                                <td>Ilośc pomieszczeń</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                        <table>
+                            <p>Pokoje</p>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Pokój dzienny z aneksem kuchennym</td>
+                                    <td>27,07 m2</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Pokój dzienny z aneksem kuchennym</td>
+                                    <td>27,07 m2</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Pokój dzienny z aneksem kuchennym</td>
+                                    <td>27,07 m2</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Pokój dzienny z aneksem kuchennym</td>
+                                    <td>27,07 m2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <img src="image/flat_51m_map_mini_03.png" class="col-xs-8">
+                        <input type="button" value="Zapytaj o cenę">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container contact spacer" id="contact">
+            <div class="col-sm-6 contact-text">
+                <h3>Chcesz dowiedziec się więcej?</h2>
+                <h4>Skontaktuj się z nami</h4>
+                <h4>Skorzystaj z formularza kontaktowego lub zadzwoń. Nasz zespół pomoże dobrać najlepszą dla ciebie ofertę mieszkaniową i udzieli niezbędnych informacji.</h4>
+                <p>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>kontakt@srebrzynskapark.pl</p>
+                <p>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    +48 667 977 960</p>
+            </div>
+            <div class="contact-form">
+                <form class="" action="index.html" method="post" id="form_div">
+                    <div id="form">
+                        <input type="text" class="field" placeholder="Name"/><br>
+                        <input type="email" class="field" placeholder="E-mail"/>
+                        <textarea id="message" class="field" placeholder="Message"></textarea>
+                        <input id="submit" type="submit" value="Wyślij">
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-box spacer narrow-container">
+                <div class="col-md-6 footer-left">
+                    <h3>Newsletter</h3>
+                    <p>Bądź informowany na bieżąco o aktualnościach oraz ofertach.</p>
+                    <form class="" action="index.html" method="post">
+                        <input type="text" name="" value="" placeholder="Adres e-mail">
+                        <input type="submit" name="" value="Zapisz się!"></div>
+                </form>
+                <div class="col-md-6 footer-right"><img src="image\footer_logo_03.png" class="footer-brand"></div>
+            </div>
+        </footer>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="dist/bundle.js"></script>
+</html>
