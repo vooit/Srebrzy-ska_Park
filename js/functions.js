@@ -6,43 +6,44 @@ export function parkApp() {
         let jumbo2 = $('.jumbo-2');
         let jumbo3 = $('.jumbo-3');
         let jumboInfo = $('.jumbo-info');
-
-        const estateHeight = jumboInfo.height();
-        estate.css('height', estateHeight);
-
-        jumboElements.css('display', 'none');
-        jumbo1.css('display', 'flex');
-
-
+        let toPrevMap = $('.to-prev-map');
         let nextMapBtn = $('.to-next-map');
+        let flatBtn3 = $('#flat-3');
+        const estateHeight = jumboInfo.height();
 
-        nextMapBtn.on('click', function() {
-            console.log(nextMapBtn);
+        init();
 
-            $(this).parent(".jumbo").css('display', 'none');
-            $(this).parent('.jumbo').next('.jumbo').css('display', 'flex');
+        function init() {
+            setJumboHeight();
+            hideJumbo()
+            navHandler();
+        }
 
+        function setJumboHeight() {
+            estate.css('height', estateHeight);
+        }
 
+        function hideJumbo() {
+            jumboElements.css('display', 'none');
+            jumbo1.css('display', 'flex');
+        }
+
+        function goToNext() {
+            $(this).parent('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
+        }
+
+        flatBtn3.on('click', function() {
+            $(this).closest('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
         })
-        // let toFloorBtn = $('#toFloorBtn');
-        // toFloorBtn.on('click', function() {
-        //     jumbo1.css('display', 'none');
-        //     jumbo2.css('display', 'flex');
-        // })
-        //
-        // let toMapBtn = $('#toMapBtn');
-        // toMapBtn.on('click', function() {
-        //
-        //     jumbo2.css('display', 'none');
-        //     jumbo3.css('display', 'flex');
-        // })
 
+        function navHandler() {
+            toPrevMap.on('click', goToPrev);
+            nextMapBtn.on('click', goToNext);
+        }
 
-
-
-
-
-
+        function goToPrev() {
+            $(this).closest('.jumbo').css('display', 'none').prev('.jumbo').css('display', 'flex');
+        }
 
     })();
 
