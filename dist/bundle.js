@@ -93,58 +93,58 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.parkApp = parkApp;
 function parkApp() {
-    (function () {
-        var estate = $('.estate-jumbotron');
-        var jumboElements = $('.jumbo');
-        var jumbo1 = $('.jumbo-1');
-        var jumbo2 = $('.jumbo-2');
-        var jumbo3 = $('.jumbo-3');
-        var jumboInfo = $('.jumbo-info');
-        var toPrevMap = $('.to-prev-map');
-        var nextMapBtn = $('.to-next-map');
-        var flatBtn3 = $('#flat-3');
+
+    var estate = $('.estate-jumbotron');
+    var jumboElements = $('.jumbo');
+    var jumbo1 = $('.jumbo-1');
+    var jumbo2 = $('.jumbo-2');
+    var jumbo3 = $('.jumbo-3');
+    var jumboInfo = $('.jumbo-info');
+    var toPrevMap = $('.to-prev-map');
+    var nextMapBtn = $('.to-next-map');
+    var flatBtn3 = $('#flat-3');
+
+    var toPrice = $('.to-price');
+
+    init();
+
+    function init() {
+        setJumboHeight();
+        hideJumbo();
+        navHandler();
+    }
+
+    function setJumboHeight() {
         var estateHeight = jumboInfo.height();
-        var toPrice = $('.to-price');
+        estate.css('height', estateHeight);
+    }
 
-        init();
+    function hideJumbo() {
+        jumboElements.css('display', 'none');
+        jumbo1.css('display', 'flex');
+    }
 
-        function init() {
-            setJumboHeight();
-            hideJumbo();
-            navHandler();
-        }
+    function navHandler() {
+        toPrevMap.on('click', goToPrev);
+        nextMapBtn.on('click', goToNext);
+    }
 
-        function setJumboHeight() {
-            estate.css('height', estateHeight);
-        }
+    function goToNext() {
+        $(this).parent('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
+    }
 
-        function hideJumbo() {
-            jumboElements.css('display', 'none');
-            jumbo1.css('display', 'flex');
-        }
+    function goToPrev() {
+        $(this).closest('.jumbo').css('display', 'none').prev('.jumbo').css('display', 'flex');
+    }
 
-        function navHandler() {
-            toPrevMap.on('click', goToPrev);
-            nextMapBtn.on('click', goToNext);
-        }
+    flatBtn3.on('click', function () {
+        $(this).closest('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
+    });
 
-        function goToNext() {
-            $(this).parent('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
-        }
-
-        function goToPrev() {
-            $(this).closest('.jumbo').css('display', 'none').prev('.jumbo').css('display', 'flex');
-        }
-
-        flatBtn3.on('click', function () {
-            $(this).closest('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
-        });
-
-        toPrice.on('click', function () {
-            console.log("click działa");
-            $(this).closest('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
-        });
-    })();
+    toPrice.on('click', function () {
+        console.log("click działa");
+        $(this).closest('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
+    });
 }
 
 /***/ }),
@@ -156,7 +156,7 @@ exports = module.exports = __webpack_require__(3)();
 
 
 // module
-exports.push([module.i, "#form_div {\n  width: 80%;\n  height: 400px;\n  display: flex;\n  align-items: center;\n  background: white;\n  z-index: 100;\n  transform: translateY(22%); }\n\n#form {\n  width: 90%;\n  margin: 0 auto; }\n\n.field {\n  width: 100%;\n  padding: 4px;\n  border: none;\n  outline: none;\n  background: none;\n  color: #d5d5d5;\n  font-style: italic;\n  border-bottom: 2px solid #595959;\n  margin-bottom: 18px; }\n\n#message {\n  resize: none;\n  height: 100px;\n  overflow-y: hidden; }\n\n#submit {\n  background-color: #595959;\n  color: white;\n  font-size: 17px;\n  padding: 8px;\n  width: 100px;\n  border: none;\n  cursor: pointer;\n  opacity: 1;\n  transition: opacity 0.5s;\n  margin: 0 auto; }\n\n#submit:hover {\n  opacity: 0.7; }\n\n.narrow-container {\n  max-width: 1140px;\n  margin: 0 auto; }\n\nbody,\nhtml {\n  font-size: 18px;\n  margin: 0;\n  padding: 0;\n  font-family: 'Open Sans', sans-serif;\n  box-sizing: border-box;\n  padding-top: 15px; }\n\nbody {\n  background: #f5f5f5; }\n\n.list-group-item,\n.navbar-default,\n.panel {\n  border-radius: 0 !important; }\n\n[class*=\"col-\"] {\n  padding: 0 !important; }\n\n.spacer {\n  padding: 3em 0; }\n\n.navbar {\n  padding-left: 5%;\n  color: black;\n  background: white; }\n  .navbar .navbar-brand {\n    width: 6em;\n    height: 5em;\n    position: absolute;\n    background: black;\n    justify-content: center;\n    display: flex;\n    align-items: center; }\n  .navbar #navbarNavDropdown {\n    justify-content: flex-end; }\n    .navbar #navbarNavDropdown .nav-item {\n      transition: 0.4s; }\n      .navbar #navbarNavDropdown .nav-item:hover {\n        background-color: gray; }\n    .navbar #navbarNavDropdown .nav-link {\n      color: black !important;\n      font-size: 1em;\n      font-weight: 200; }\n\n.search-panel {\n  display: flex;\n  flex-direction: row; }\n  .search-panel .panel {\n    transition: 0.4s linear;\n    padding-left: 0 !important;\n    padding-right: 0 !important;\n    border: 4px solid; }\n    .search-panel .panel a {\n      justify-content: center; }\n    .search-panel .panel:hover {\n      background: #939598; }\n\n.floor-pointer:hover .flat {\n  opacity: 0.6; }\n\n.estate-jumbotron .floor-box {\n  width: 90%;\n  transition: 0.4s;\n  opacity: 1;\n  position: absolute;\n  top: 22%; }\n  .estate-jumbotron .floor-box .flat {\n    width: 100%; }\n\n.estate-jumbotron .jumbo > img {\n  width: 100%; }\n\n.estate-jumbotron .jumbo {\n  display: flex;\n  justify-content: center;\n  position: absolute;\n  width: 100%; }\n  .estate-jumbotron .jumbo i {\n    position: absolute;\n    top: 4%;\n    left: 4%;\n    font-size: 2em;\n    cursor: pointer; }\n\n.estate-jumbotron .jumbo-1 input[type=\"button\"] {\n  background: black;\n  width: 2em;\n  height: 2em;\n  position: absolute;\n  top: 25%;\n  opacity: 0.8;\n  border: 4px solid white;\n  transform: rotate(45deg);\n  transition: 0.3s; }\n  .estate-jumbotron .jumbo-1 input[type=\"button\"]:hover {\n    opacity: 1; }\n\n.estate-jumbotron .floor {\n  width: 100%;\n  height: 100%; }\n\n.estate-jumbotron .jumbo-2 .floor-box {\n  width: 75%;\n  height: 11%;\n  top: 22%;\n  position: absolute;\n  opacity: 0;\n  transition: 0.4s;\n  cursor: pointer; }\n  .estate-jumbotron .jumbo-2 .floor-box:hover {\n    opacity: 0.7; }\n\n.estate-jumbotron .jumbo-3 .floor-box {\n  width: 90%;\n  height: 56%;\n  transition: 0.4s;\n  position: absolute;\n  top: 11%;\n  opacity: 0.6; }\n  .estate-jumbotron .jumbo-3 .floor-box .flat-1 {\n    width: 18%;\n    height: 49%;\n    position: absolute;\n    opacity: 0;\n    transition: 0.4s;\n    cursor: pointer; }\n    .estate-jumbotron .jumbo-3 .floor-box .flat-1:hover {\n      opacity: 0.7; }\n  .estate-jumbotron .jumbo-3 .floor-box .flat-2 {\n    width: 26%;\n    height: 107%;\n    right: 2%;\n    bottom: -30%;\n    position: absolute;\n    opacity: 0;\n    transition: 0.4s;\n    cursor: pointer; }\n    .estate-jumbotron .jumbo-3 .floor-box .flat-2:hover {\n      opacity: 0.7; }\n  .estate-jumbotron .jumbo-3 .floor-box .flat-3 {\n    width: 14%;\n    height: 55%;\n    right: 34%;\n    top: 31%;\n    position: absolute;\n    opacity: 0;\n    transition: 0.4s;\n    cursor: pointer;\n    z-index: 20; }\n    .estate-jumbotron .jumbo-3 .floor-box .flat-3:hover {\n      opacity: 0.7; }\n\n.estate-jumbotron .jumbo-info {\n  position: relative; }\n  .estate-jumbotron .jumbo-info .flat-info {\n    font-size: 0.9em;\n    max-width: 25%;\n    padding: 20px;\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n    background: #f5f5f5;\n    position: absolute;\n    top: 50%;\n    left: 25%;\n    transform: translateX(-75%) translateY(-50%); }\n    .estate-jumbotron .jumbo-info .flat-info img {\n      margin: 0 auto; }\n    .estate-jumbotron .jumbo-info .flat-info input[type=\"button\"] {\n      color: white;\n      margin: 0 auto;\n      width: 50%;\n      background: grey;\n      border: none; }\n    .estate-jumbotron .jumbo-info .flat-info table {\n      width: 100%; }\n      .estate-jumbotron .jumbo-info .flat-info table tr > td:last-of-type {\n        text-align: right; }\n      .estate-jumbotron .jumbo-info .flat-info table tr > td:first-of-type {\n        padding-right: 10px; }\n      .estate-jumbotron .jumbo-info .flat-info table tbody {\n        vertical-align: baseline; }\n\n.contact .contact-text h3 {\n  padding: 2em 0 1em; }\n\n.contact .contact-text h4 {\n  font-size: 1.1em; }\n\n.contact .contact-text p {\n  font-weight: 600;\n  font-size: 0.8em; }\n\n.contact .contact-form {\n  display: flex;\n  justify-content: flex-end; }\n\nfooter {\n  background: #252525; }\n  footer h3 {\n    font-weight: 600;\n    font-size: 2em;\n    letter-spacing: 2px; }\n  footer p {\n    font-size: 0.8em; }\n  footer .footer-box {\n    display: flex;\n    flex-direction: row;\n    color: white; }\n    footer .footer-box .footer-left {\n      display: flex;\n      flex-direction: column; }\n      footer .footer-box .footer-left form {\n        display: flex;\n        flex-direction: row;\n        justify-content: space-between; }\n        footer .footer-box .footer-left form input[type=submit],\n        footer .footer-box .footer-left form input[type=text] {\n          border: none;\n          background: #252525;\n          width: 40%;\n          transition: 0.4s;\n          color: #757575; }\n        footer .footer-box .footer-left form input[type=submit] {\n          line-height: 2.2em;\n          vertical-align: middle;\n          color: #dbdbdb;\n          background: #595959; }\n          footer .footer-box .footer-left form input[type=submit]:hover {\n            background: #404040;\n            color: white;\n            opacity: 0.7; }\n    footer .footer-box .footer-right {\n      display: flex;\n      align-items: flex-end;\n      justify-content: flex-end; }\n      footer .footer-box .footer-right .footer-brand {\n        position: absolute;\n        left: 70%;\n        top: 50%;\n        transform: translateY(-50%); }\n", ""]);
+exports.push([module.i, "#form_div {\n  width: 80%;\n  height: 400px;\n  display: flex;\n  align-items: center;\n  background: white;\n  z-index: 100;\n  transform: translateY(22%); }\n\n#form {\n  width: 90%;\n  margin: 0 auto; }\n\n.field {\n  width: 100%;\n  padding: 4px;\n  border: none;\n  outline: none;\n  background: none;\n  color: #d5d5d5;\n  font-style: italic;\n  border-bottom: 2px solid #595959;\n  margin-bottom: 18px; }\n\n#message {\n  resize: none;\n  height: 100px;\n  overflow-y: hidden; }\n\n#submit {\n  background-color: #595959;\n  color: white;\n  font-size: 17px;\n  padding: 8px;\n  width: 100px;\n  border: none;\n  cursor: pointer;\n  opacity: 1;\n  transition: opacity 0.5s;\n  margin: 0 auto; }\n\n#submit:hover {\n  opacity: 0.7; }\n\n.narrow-container {\n  max-width: 1140px;\n  margin: 0 auto; }\n\nbody,\nhtml {\n  font-size: 18px;\n  margin: 0;\n  padding: 0;\n  font-family: 'Open Sans', sans-serif;\n  box-sizing: border-box;\n  padding-top: 15px; }\n\nbody {\n  background: #f5f5f5; }\n\n.list-group-item,\n.navbar-default,\n.panel {\n  border-radius: 0 !important; }\n\n[class*=\"col-\"] {\n  padding: 0 !important; }\n\n.spacer {\n  padding: 3em 0; }\n\n.navbar {\n  padding-left: 5%;\n  color: black;\n  background: white; }\n  .navbar .navbar-brand {\n    width: 6em;\n    height: 5em;\n    position: absolute;\n    background: black;\n    justify-content: center;\n    display: flex;\n    align-items: center; }\n  .navbar #navbarNavDropdown {\n    justify-content: flex-end; }\n    .navbar #navbarNavDropdown .nav-item {\n      transition: 0.4s; }\n      .navbar #navbarNavDropdown .nav-item:hover {\n        background-color: gray; }\n    .navbar #navbarNavDropdown .nav-link {\n      color: black !important;\n      font-size: 1em;\n      font-weight: 200; }\n\n.search-panel {\n  margin-top: 1em;\n  display: flex;\n  flex-direction: row; }\n  .search-panel .panel {\n    transition: 0.4s linear;\n    padding-left: 0 !important;\n    padding-right: 0 !important;\n    border: 4px solid #595959; }\n    .search-panel .panel a {\n      justify-content: center;\n      height: 100%; }\n    .search-panel .panel:hover {\n      background: #939598; }\n\n.floor-pointer:hover .flat {\n  opacity: 0.6; }\n\n.estate-jumbotron .floor-box {\n  width: 90%;\n  transition: 0.4s;\n  opacity: 1;\n  position: absolute;\n  top: 22%; }\n  .estate-jumbotron .floor-box .flat {\n    width: 100%; }\n\n.estate-jumbotron .jumbo > img {\n  width: 100%; }\n\n.estate-jumbotron .jumbo {\n  display: flex;\n  justify-content: center;\n  position: absolute;\n  width: 100%; }\n  .estate-jumbotron .jumbo i {\n    position: absolute;\n    top: 4%;\n    left: 4%;\n    font-size: 2em;\n    cursor: pointer; }\n\n.estate-jumbotron .jumbo-1 .overlay {\n  transition: 0.4s;\n  transition-timing-function: ease-in-out;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  color: #f5f5f5;\n  background-color: rgba(61, 0, 0, 0.2);\n  opacity: 0; }\n  .estate-jumbotron .jumbo-1 .overlay .overlay-text-box {\n    overflow: hidden; }\n    .estate-jumbotron .jumbo-1 .overlay .overlay-text-box h2,\n    .estate-jumbotron .jumbo-1 .overlay .overlay-text-box p {\n      padding: 0 40px; }\n    .estate-jumbotron .jumbo-1 .overlay .overlay-text-box h2 {\n      font-stretch: condensed;\n      font-family: 'Open Sans Condensed', sans-serif;\n      font-size: 5em;\n      margin-top: 4%;\n      font-weight: 200; }\n    .estate-jumbotron .jumbo-1 .overlay .overlay-text-box p {\n      font-family: 'Anton', sans-serif;\n      text-align: right;\n      letter-spacing: 3px;\n      line-height: 2em;\n      font-size: 4em;\n      font-weight: 600; }\n\n.estate-jumbotron .jumbo-1:hover .overlay {\n  opacity: 1; }\n\n.estate-jumbotron .jumbo-1:hover h2 {\n  color: blue; }\n\n.estate-jumbotron .jumbo-1:hover img {\n  -webkit-filter: blur(2px);\n  filter: blur(2px); }\n\n.estate-jumbotron .jumbo-1 input[type=\"button\"] {\n  background: black;\n  width: 2em;\n  height: 2em;\n  position: absolute;\n  top: 25%;\n  opacity: 0.8;\n  border: 4px solid white;\n  transform: rotate(45deg);\n  transition: 0.3s; }\n  .estate-jumbotron .jumbo-1 input[type=\"button\"]:hover {\n    opacity: 1; }\n\n.estate-jumbotron .floor {\n  width: 100%;\n  height: 100%; }\n\n.estate-jumbotron .jumbo-2 .floor-box {\n  width: 75%;\n  height: 11%;\n  top: 22%;\n  position: absolute;\n  opacity: 0;\n  transition: 0.4s;\n  cursor: pointer; }\n  .estate-jumbotron .jumbo-2 .floor-box:hover {\n    opacity: 0.7; }\n\n.estate-jumbotron .jumbo-3 .floor-box {\n  width: 90%;\n  height: 56%;\n  transition: 0.4s;\n  position: absolute;\n  top: 11%;\n  opacity: 0.6; }\n  .estate-jumbotron .jumbo-3 .floor-box .flat-1 {\n    width: 18%;\n    height: 49%;\n    position: absolute;\n    opacity: 0;\n    transition: 0.4s;\n    cursor: pointer; }\n    .estate-jumbotron .jumbo-3 .floor-box .flat-1:hover {\n      opacity: 0.7; }\n  .estate-jumbotron .jumbo-3 .floor-box .flat-2 {\n    width: 26%;\n    height: 107%;\n    right: 2%;\n    bottom: -30%;\n    position: absolute;\n    opacity: 0;\n    transition: 0.4s;\n    cursor: pointer; }\n    .estate-jumbotron .jumbo-3 .floor-box .flat-2:hover {\n      opacity: 0.7; }\n  .estate-jumbotron .jumbo-3 .floor-box .flat-3 {\n    width: 14%;\n    height: 55%;\n    right: 34%;\n    top: 31%;\n    position: absolute;\n    opacity: 0;\n    transition: 0.4s;\n    cursor: pointer;\n    z-index: 20; }\n    .estate-jumbotron .jumbo-3 .floor-box .flat-3:hover {\n      opacity: 0.7; }\n\n.estate-jumbotron .jumbo-info {\n  position: relative; }\n  .estate-jumbotron .jumbo-info .flat-info {\n    font-size: 0.9em;\n    max-width: 25%;\n    padding: 20px;\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n    background: #f5f5f5;\n    position: absolute;\n    top: 50%;\n    left: 25%;\n    transform: translateX(-75%) translateY(-50%); }\n    .estate-jumbotron .jumbo-info .flat-info img {\n      margin: 0 auto; }\n    .estate-jumbotron .jumbo-info .flat-info input[type=\"button\"] {\n      color: white;\n      margin: 0 auto;\n      width: 50%;\n      background: grey;\n      border: none; }\n    .estate-jumbotron .jumbo-info .flat-info table {\n      width: 100%; }\n      .estate-jumbotron .jumbo-info .flat-info table tr > td:last-of-type {\n        text-align: right; }\n      .estate-jumbotron .jumbo-info .flat-info table tr > td:first-of-type {\n        padding-right: 10px; }\n      .estate-jumbotron .jumbo-info .flat-info table tbody {\n        vertical-align: baseline; }\n\n.contact .contact-text h3 {\n  padding: 2em 0 1em; }\n\n.contact .contact-text h4 {\n  font-size: 1.1em; }\n\n.contact .contact-text p {\n  font-weight: 600;\n  font-size: 0.8em; }\n\n.contact .contact-form {\n  display: flex;\n  justify-content: flex-end; }\n\nfooter {\n  background: #252525; }\n  footer h3 {\n    font-weight: 600;\n    font-size: 2em;\n    letter-spacing: 2px; }\n  footer p {\n    font-size: 0.8em; }\n  footer .footer-box {\n    display: flex;\n    flex-direction: row;\n    color: white; }\n    footer .footer-box .footer-left {\n      display: flex;\n      flex-direction: column; }\n      footer .footer-box .footer-left form {\n        display: flex;\n        flex-direction: row;\n        justify-content: space-between; }\n        footer .footer-box .footer-left form input[type=submit],\n        footer .footer-box .footer-left form input[type=text] {\n          border: none;\n          background: #252525;\n          width: 40%;\n          transition: 0.4s;\n          color: #757575; }\n        footer .footer-box .footer-left form input[type=submit] {\n          line-height: 2.2em;\n          vertical-align: middle;\n          color: #dbdbdb;\n          background: #595959; }\n          footer .footer-box .footer-left form input[type=submit]:hover {\n            background: #404040;\n            color: white;\n            opacity: 0.7; }\n    footer .footer-box .footer-right {\n      display: flex;\n      align-items: flex-end;\n      justify-content: flex-end; }\n      footer .footer-box .footer-right .footer-brand {\n        position: absolute;\n        left: 70%;\n        top: 50%;\n        transform: translateY(-50%); }\n", ""]);
 
 // exports
 
