@@ -125,48 +125,64 @@
                             </tbody>
                         </table>
                         <img src="image/flat_51m_map_mini_03.png" class="col-xs-8">
-                        <input type="button" value="Zapytaj o cenę">
+                        <input class='to-price' type="button" value="Zapytaj o cenę">
                     </div>
                 </div>
+                <div class="jumbo jumbo-contact">
+                    <i class="fa fa-arrow-circle-left to-prev-map" aria-hidden="true"></i>
+                    <form class='' action="index.html" method="post">
+                        <div id="form">
+                            <h3>Zapytaj o cenę!</h3>
+                            <input type="text" class="field" placeholder="Name"/><br>
+                            <input type="email" class="field" placeholder="E-mail"/>
+                            <textarea id="message" class="field" placeholder="Message"></textarea>
+                            <input id="submit" type="submit" value="Wyślij">
+                        </div>
+                    </form>
+                </div>
             </div>
-        </section>
-        <section class="container contact spacer" id="contact">
-            <div class="col-sm-6 contact-text">
-                <h3>Chcesz dowiedziec się więcej?</h2>
-                <h4>Skontaktuj się z nami</h4>
-                <h4>Skorzystaj z formularza kontaktowego lub zadzwoń. Nasz zespół pomoże dobrać najlepszą dla ciebie ofertę mieszkaniową i udzieli niezbędnych informacji.</h4>
-                <p>
-                    <i class="fa fa-envelope-o" aria-hidden="true"></i>kontakt@srebrzynskapark.pl</p>
-                <p>
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    +48 667 977 960</p>
-            </div>
-            <div class="contact-form">
-                <form class="" action="index.html" method="post" id="form_div">
-                    <div id="form">
-                        <input type="text" class="field" placeholder="Name"/><br>
-                        <input type="email" class="field" placeholder="E-mail"/>
-                        <textarea id="message" class="field" placeholder="Message"></textarea>
-                        <input id="submit" type="submit" value="Wyślij">
-                    </div>
+        </div>
+    </section>
+    <section class="container contact spacer" id="contact">
+        <div class="col-sm-6 contact-text">
+            <h3>Chcesz dowiedziec się więcej?</h2>
+            <h4>Skontaktuj się z nami</h4>
+            <h4>Skorzystaj z formularza kontaktowego lub zadzwoń. Nasz zespół pomoże dobrać najlepszą dla ciebie ofertę mieszkaniową i udzieli niezbędnych informacji.</h4>
+            <p>
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>kontakt@srebrzynskapark.pl</p>
+            <p>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                +48 667 977 960</p>
+        </div>
+        <div class="contact-form">
+            <form class="" action="index.html" method="post" id="form_div">
+                <div id="form">
+                    <h3>Formularz Kontaktowy</h3>
+                    <input type="text" class="field" placeholder="Name"/><br>
+                    <input type="email" class="field" placeholder="E-mail"/>
+                    <textarea id="message" class="field" placeholder="Message"></textarea>
+                    <input id="submit" type="submit" value="Wyślij">
+                </div>
+            </form>
+        </div>
+    </section>
+    <section></section>
+    <footer>
+        <div class="footer-box spacer narrow-container">
+            <div class="col-md-6 footer-left">
+                <h3>Newsletter</h3>
+                <p>Bądź informowany na bieżąco o aktualnościach oraz ofertach.</p>
+                <form class="" action="index.html" method="post">
+                    <input type="text" name="" value="" placeholder="Adres e-mail">
+                    <input type="submit" name="" value="Zapisz się!">
                 </form>
             </div>
-        </section>
-        <footer>
-            <div class="footer-box spacer narrow-container">
-                <div class="col-md-6 footer-left">
-                    <h3>Newsletter</h3>
-                    <p>Bądź informowany na bieżąco o aktualnościach oraz ofertach.</p>
-                    <form class="" action="index.html" method="post">
-                        <input type="text" name="" value="" placeholder="Adres e-mail">
-                        <input type="submit" name="" value="Zapisz się!"></div>
-                </form>
-                <div class="col-md-6 footer-right"><img src="image\footer_logo_03.png" class="footer-brand"></div>
-            </div>
-        </footer>
-    </body>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="dist/bundle.js"></script>
+            <div class="col-md-6 footer-right"><img src="image\footer_logo_03.png" class="footer-brand"></div>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="dist/bundle.js"></script>
 </html>

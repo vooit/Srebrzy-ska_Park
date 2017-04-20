@@ -10,6 +10,7 @@ export function parkApp() {
         let nextMapBtn = $('.to-next-map');
         let flatBtn3 = $('#flat-3');
         const estateHeight = jumboInfo.height();
+        let toPrice = $('.to-price');
 
         init();
 
@@ -28,23 +29,28 @@ export function parkApp() {
             jumbo1.css('display', 'flex');
         }
 
-        function goToNext() {
-            $(this).parent('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
-        }
-
-        flatBtn3.on('click', function() {
-            $(this).closest('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
-        })
-
         function navHandler() {
             toPrevMap.on('click', goToPrev);
             nextMapBtn.on('click', goToNext);
+        }
+
+        function goToNext() {
+            $(this).parent('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
         }
 
         function goToPrev() {
             $(this).closest('.jumbo').css('display', 'none').prev('.jumbo').css('display', 'flex');
         }
 
-    })();
+        flatBtn3.on('click', function() {
+            $(this).closest('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
+        })
 
+        toPrice.on('click', function() {
+            console.log("click działa");
+            $(this).closest('.jumbo').css('display', 'none').next('.jumbo').css('display', 'flex');
+        })
+
+
+    })();
 }
